@@ -18,9 +18,9 @@ import javax.servlet.annotation.WebServlet;
  * By default, a new UI instance is automatically created when the page is loaded. To reuse
  * the same instance, add @PreserveOnRefresh.
  */
-@Title("Addressbook")
+@Title("Dashboard")
 @Theme("valo")
-public class AddressbookUI extends UI {
+public class DashboardUI extends UI {
 
 
     TextField filter = new TextField();
@@ -129,7 +129,7 @@ public class AddressbookUI extends UI {
      *  class name and turn on production mode when you have finished developing the application.
      */
     @WebServlet(urlPatterns = "/*")
-    @VaadinServletConfiguration(ui = AddressbookUI.class, productionMode = false)
+    @VaadinServletConfiguration(ui = DashboardUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
     }
 
