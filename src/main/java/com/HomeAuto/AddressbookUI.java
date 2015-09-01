@@ -1,13 +1,13 @@
-package com.vaadin.tutorial.addressbook;
+package com.HomeAuto;
 
+import com.HomeAuto.backend.Contact;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.tutorial.addressbook.backend.Contact;
-import com.vaadin.tutorial.addressbook.backend.ContactService;
+import com.HomeAuto.backend.ContactService;
 import com.vaadin.ui.*;
 
 import javax.servlet.annotation.WebServlet;
@@ -23,17 +23,6 @@ import javax.servlet.annotation.WebServlet;
 public class AddressbookUI extends UI {
 
 
-
-
-
-
-
-	/* Hundreds of widgets.
-	 * Vaadin's user interface components are just Java objects that encapsulate
-	 * and handle cross-browser support and client-server communication. The
-	 * default Vaadin components are in the com.vaadin.ui package and there
-	 * are over 500 more in vaadin.com/directory.
-     */
     TextField filter = new TextField();
     Grid contactList = new Grid();
     Button newContact = new Button("New contact");
