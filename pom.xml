@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.vaadin.tutorial</groupId>
-	<artifactId>addressbook</artifactId>
+	<groupId>com.vaadin.HomeAuto</groupId>
+	<artifactId>HomeAutomation</artifactId>
 	<packaging>war</packaging>
 	<version>2.0</version>
-	<name>Vaadin Addressbook example</name>
+	<name>HomeAutomation</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,6 +70,13 @@
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.2.3.v20140905</version>
+				<configuration>
+                    <stopKey />
+                    <stopPort />
+                    <httpConnector>
+                        <port>8084</port>
+                    </httpConnector>
+                </configuration>
 			</plugin>
 		</plugins>
 	</build>
