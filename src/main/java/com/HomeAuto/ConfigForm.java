@@ -3,6 +3,7 @@ package com.HomeAuto;
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.event.ShortcutAction;
+import com.HomeAuto.backend.UDPTransmit;
 import com.HomeAuto.backend.Contact;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Notification.Type;
@@ -16,7 +17,7 @@ import com.vaadin.ui.themes.ValoTheme;
  * Similarly named field by naming convention or customized
  * with @PropertyId annotation.
  */
-public class ContactForm extends FormLayout {
+public class ConfigForm extends FormLayout {
 
     Button save = new Button("Save", this::save);
     Button cancel = new Button("Cancel", this::cancel);
@@ -25,13 +26,14 @@ public class ContactForm extends FormLayout {
     TextField phone = new TextField("Phone");
     TextField email = new TextField("Email");
     DateField birthDate = new DateField("Birth date");
+    //UDPTransmit UDPTransmit = new UDPTransmit();
 
     Contact contact;
 
     // Easily bind forms to beans and manage validation and buffering
     BeanFieldGroup<Contact> formFieldBindings;
 
-    public ContactForm() {
+    public ConfigForm() {
         configureComponents();
         buildLayout();
     }
@@ -69,21 +71,22 @@ public class ContactForm extends FormLayout {
      * and compact with Lambda expressions.
      */
     public void save(Button.ClickEvent event) {
-        try {
-            // Commit the fields from UI to DAO
-            formFieldBindings.commit();
-
-            // Save DAO to backend with direct synchronous service API
-            getUI().service.save(contact);
-
-            String msg = String.format("Saved '%s %s'.",
-                    contact.getFirstName(),
-                    contact.getLastName());
-            Notification.show(msg,Type.TRAY_NOTIFICATION);
-            getUI().refreshContacts();
-        } catch (FieldGroup.CommitException e) {
-            // Validation exceptions could be shown here
-        }
+//        try {
+//            // Commit the fields from UI to DAO
+//            //formFieldBindings.commit();
+//
+//            // Save DAO to backend with direct synchronous service API
+//            getUI().service.save(contact);
+//
+//            String msg = String.format("Saved '%s %s'.",
+//                    contact.getFirstName(),
+//                    contact.getLastName());
+//            Notification.show(msg,Type.TRAY_NOTIFICATION);
+//            getUI().refreshContacts();
+//                    }
+//        catch () {
+//            // Validation exceptions could be shown here
+//        }
     }
 
     public void cancel(Button.ClickEvent event) {

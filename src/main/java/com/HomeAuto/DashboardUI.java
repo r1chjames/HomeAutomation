@@ -1,10 +1,12 @@
 package com.HomeAuto;
 
 import com.HomeAuto.backend.Contact;
+import com.HomeAuto.backend.LimitlessLED;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.data.util.BeanItemContainer;
+import com.vaadin.event.ShortcutAction;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.HomeAuto.backend.ContactService;
@@ -22,13 +24,15 @@ import javax.servlet.annotation.WebServlet;
 @Theme("valo")
 public class DashboardUI extends UI {
 
-
-    TextField filter = new TextField();
+    TextField search = new TextField();
+    Button lightsOn = new Button("Lights On", this::LightsOn);
+    Button lightsOff = new Button("Lights Off", this::LightsOff);
+    Button lightsGreen = new Button("Lights Green", this::LightsGreen);
     Grid contactList = new Grid();
-    Button newContact = new Button("New contact");
+    Button config = new Button("Config");
 
-    // ContactForm is an example of a custom component class
-    ContactForm contactForm = new ContactForm();
+    // ConfigForm is an example of a custom component class
+    ConfigForm configForm = new ConfigForm();
 
     // ContactService is a in-memory mock DAO that mimics
     // a real-world datasource. Typically implemented for
@@ -56,10 +60,11 @@ public class DashboardUI extends UI {
          * to synchronously handle those events. Vaadin automatically sends
          * only the needed changes to the web page without loading a new page.
          */
-        newContact.addClickListener(e -> contactForm.edit(new Contact()));
+        config.addClickListener(e -> configForm.edit(new Contact()));
+        //lightsOn.addClickListener(e -> LightsOn(this::LightsOn));
 
-        filter.setInputPrompt("Filter contacts...");
-        filter.addTextChangeListener(e -> refreshContacts(e.getText()));
+        search.setInputPrompt("Search ...");
+        search.addTextChangeListener(e -> refreshContacts(e.getText()));
 
         contactList.setContainerDataSource(new BeanItemContainer<>(Contact.class));
         contactList.setColumnOrder("firstName", "lastName", "email");
@@ -68,7 +73,7 @@ public class DashboardUI extends UI {
         contactList.removeColumn("phone");
         contactList.setSelectionMode(Grid.SelectionMode.SINGLE);
         contactList.addSelectionListener(e
-                -> contactForm.edit((Contact) contactList.getSelectedRow()));
+                -> configForm.edit((Contact) contactList.getSelectedRow()));
         refreshContacts();
     }
 
@@ -84,17 +89,17 @@ public class DashboardUI extends UI {
      * with Vaadin Designer, CSS and HTML.
      */
     private void buildLayout() {
-        HorizontalLayout actions = new HorizontalLayout(filter, newContact);
+        HorizontalLayout actions = new HorizontalLayout(search, config);
         actions.setWidth("100%");
-        filter.setWidth("100%");
-        actions.setExpandRatio(filter, 1);
+        search.setWidth("100%");
+        actions.setExpandRatio(search, 1);
 
-        VerticalLayout left = new VerticalLayout(actions, contactList);
+        VerticalLayout left = new VerticalLayout(actions, lightsOn, lightsOff, lightsGreen);
         left.setSizeFull();
-        contactList.setSizeFull();
-        left.setExpandRatio(contactList, 1);
+        //contactList.setSizeFull();
+        left.setExpandRatio(lightsOn, 1);
 
-        HorizontalLayout mainLayout = new HorizontalLayout(left, contactForm);
+        HorizontalLayout mainLayout = new HorizontalLayout(left, configForm);
         mainLayout.setSizeFull();
         mainLayout.setExpandRatio(left, 1);
 
@@ -111,23 +116,28 @@ public class DashboardUI extends UI {
      * you choose.
      */
     void refreshContacts() {
-        refreshContacts(filter.getValue());
+        refreshContacts(search.getValue());
     }
 
     private void refreshContacts(String stringFilter) {
         contactList.setContainerDataSource(new BeanItemContainer<>(
                 Contact.class, service.findAll(stringFilter)));
-        contactForm.setVisible(false);
+        configForm.setVisible(false);
     }
 
 
+    public void LightsOn(Button.ClickEvent event) {
+        LimitlessLED.lightControl(1, "white");
+    }
 
+    public void LightsOff(Button.ClickEvent event) {
+        LimitlessLED.lightControl(1, "off");
+    }
 
-    /*  Deployed as a Servlet or Portlet.
-     *
-     *  You can specify additional servlet parameters like the URI and UI
-     *  class name and turn on production mode when you have finished developing the application.
-     */
+    public void LightsGreen(Button.ClickEvent event) {
+        LimitlessLED.lightControl(1, "green");
+    }
+
     @WebServlet(urlPatterns = "/*")
     @VaadinServletConfiguration(ui = DashboardUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
