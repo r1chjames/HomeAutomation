@@ -9,8 +9,11 @@ import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.data.Property.ValueChangeEvent;
+import com.vaadin.data.Property.ValueChangeListener;
 import com.HomeAuto.backend.ContactService;
 import com.vaadin.ui.*;
+import com.vaadin.ui.components.colorpicker.ColorChangeEvent;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -26,6 +29,8 @@ public class DashboardUI extends UI {
 
     TextField search = new TextField();
     Button lightsOn = new Button("Lights On", this::LightsOn);
+    ColorPicker colorPicker = new ColorPicker("LimitlessLED Colour");
+    Label colorName = new Label("Selected color: " + colorPicker.getColor());
     Button lightsOff = new Button("Lights Off", this::LightsOff);
     Button lightsGreen = new Button("Lights Green", this::LightsGreen);
     Grid contactList = new Grid();
@@ -65,7 +70,6 @@ public class DashboardUI extends UI {
 
         search.setInputPrompt("Search ...");
         search.addTextChangeListener(e -> refreshContacts(e.getText()));
-
         contactList.setContainerDataSource(new BeanItemContainer<>(Contact.class));
         contactList.setColumnOrder("firstName", "lastName", "email");
         contactList.removeColumn("id");
@@ -75,7 +79,15 @@ public class DashboardUI extends UI {
         contactList.addSelectionListener(e
                 -> configForm.edit((Contact) contactList.getSelectedRow()));
         refreshContacts();
+
+        colorPicker.setCaption("LimitlessLED Colour");
+        colorPicker.setHistoryVisibility(false);
+        colorPicker.setHSVVisibility(false);
+        colorPicker.setRGBVisibility(true);
+        //colorPicker.
+
     }
+
 
     /* Robust layouts.
      *
@@ -94,7 +106,9 @@ public class DashboardUI extends UI {
         search.setWidth("100%");
         actions.setExpandRatio(search, 1);
 
-        VerticalLayout left = new VerticalLayout(actions, lightsOn, lightsOff, lightsGreen);
+        VerticalLayout left = new VerticalLayout(actions, lightsOn, lightsOff, lightsGreen, colorPicker, colorName);
+        left.addComponent(colorPicker);
+        left.addComponent(colorName);
         left.setSizeFull();
         //contactList.setSizeFull();
         left.setExpandRatio(lightsOn, 1);
@@ -102,19 +116,15 @@ public class DashboardUI extends UI {
         HorizontalLayout mainLayout = new HorizontalLayout(left, configForm);
         mainLayout.setSizeFull();
         mainLayout.setExpandRatio(left, 1);
-
         // Split and allow resizing
         setContent(mainLayout);
+
+        // Add another component to give feedback from server-side code
+
     }
 
-    /* Choose the design patterns you like.
-     *
-     * It is good practice to have separate data access methods that
-     * handle the back-end access and/or the user interface updates.
-     * You can further split your code into classes to easier maintenance.
-     * With Vaadin you can follow MVC, MVP or any other design pattern
-     * you choose.
-     */
+
+
     void refreshContacts() {
         refreshContacts(search.getValue());
     }
@@ -125,16 +135,15 @@ public class DashboardUI extends UI {
         configForm.setVisible(false);
     }
 
-
-    public void LightsOn(Button.ClickEvent event) {
+    private void LightsOn(Button.ClickEvent event) {
         LimitlessLED.lightControl(1, "white");
     }
 
-    public void LightsOff(Button.ClickEvent event) {
+    private void LightsOff(Button.ClickEvent event) {
         LimitlessLED.lightControl(1, "off");
     }
 
-    public void LightsGreen(Button.ClickEvent event) {
+    private void LightsGreen(Button.ClickEvent event) {
         LimitlessLED.lightControl(1, "green");
     }
 
