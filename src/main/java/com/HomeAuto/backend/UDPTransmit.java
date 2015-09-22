@@ -26,15 +26,6 @@ public class UDPTransmit {
         }
     }
 
-    private static String stringToByteString(String s){
-        String output1 = s.substring(0,4);
-        String output2 = s.substring(4, 8);
-        String output3 = s.substring(8,12);
-        String output = output1 + "@" + output2 + "@" + output3;
-        System.out.println(output);
-        return output;
-    }
-
     public static byte[] hexStringToByteArray(String s) {
         int len = s.length();
         byte[] data = new byte[len / 2];
