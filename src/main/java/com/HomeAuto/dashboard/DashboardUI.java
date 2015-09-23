@@ -28,7 +28,7 @@ import com.vaadin.ui.themes.ValoTheme;
 
 @Theme("dashboard")
 @Widgetset("com.HomeAuto.dashboard.DashboardWidgetSet")
-@Title("QuickTickets Dashboard")
+@Title("Home Automation Dashboard")
 @SuppressWarnings("serial")
 public final class DashboardUI extends UI {
 

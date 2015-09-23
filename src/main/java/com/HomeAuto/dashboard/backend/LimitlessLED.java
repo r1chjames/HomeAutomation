@@ -1,4 +1,4 @@
-package com.HomeAuto.backend;
+package com.HomeAuto.dashboard.backend;
 
 public class LimitlessLED {
 

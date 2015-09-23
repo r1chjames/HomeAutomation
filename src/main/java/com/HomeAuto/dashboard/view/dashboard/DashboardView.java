@@ -12,6 +12,8 @@ import com.HomeAuto.dashboard.event.DashboardEvent.CloseOpenWindowsEvent;
 import com.HomeAuto.dashboard.event.DashboardEvent.NotificationsCountUpdatedEvent;
 import com.HomeAuto.dashboard.event.DashboardEventBus;
 import com.HomeAuto.dashboard.view.dashboard.DashboardEdit.DashboardEditListener;
+import com.HomeAuto.dashboard.backend.LimitlessLED;
+import com.HomeAuto.dashboard.backend.WeMo;
 import com.vaadin.event.LayoutEvents.LayoutClickEvent;
 import com.vaadin.event.LayoutEvents.LayoutClickListener;
 import com.vaadin.event.ShortcutAction.KeyCode;
@@ -19,22 +21,11 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.Responsive;
-import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
+import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
-import com.vaadin.ui.Component;
-import com.vaadin.ui.CssLayout;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.Command;
 import com.vaadin.ui.MenuBar.MenuItem;
-import com.vaadin.ui.Notification;
-import com.vaadin.ui.Panel;
-import com.vaadin.ui.TextArea;
-import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.ValoTheme;
 
 @SuppressWarnings("serial")
@@ -164,6 +155,9 @@ public final class DashboardView extends Panel implements View,
        //dashboardPanels.addComponent(buildTopGrossingMovies());
         dashboardPanels.addComponent(buildNotes());
         dashboardPanels.addComponent(buildTop10TitlesByRevenue());
+        dashboardPanels.addComponent(limitlessLED());
+        dashboardPanels.addComponent(electronics());
+        dashboardPanels.addComponent(switches());
         //dashboardPanels.addComponent(buildPopularMovies());
 
         return dashboardPanels;
@@ -182,6 +176,40 @@ public final class DashboardView extends Panel implements View,
         notes.addStyleName(ValoTheme.TEXTAREA_BORDERLESS);
         Component panel = createContentWrapper(notes);
         panel.addStyleName("notes");
+        return panel;
+    }
+
+    private Component limitlessLED(){
+        Layout layout = new HorizontalLayout();
+        Panel panel = new Panel("LimitlessLED");
+        Button lightsOn = new Button("Lights On", this::LightsOn);
+        Button lightsOff = new Button("Lights Off", this::LightsOff);
+        Button lightsGreen = new Button("Lights Green", this::LightsGreen);
+        layout.addComponent(lightsOn);
+        layout.addComponent(lightsOff);
+        layout.addComponent(lightsGreen);
+        panel.setContent(layout);
+        Component compPanel = createContentWrapper(panel);
+        return compPanel;
+    }
+
+    private Component electronics(){
+        Layout layout = new HorizontalLayout();
+        Panel panel = new Panel("Electronics");
+        Button tvOn = new Button("TV On");
+        Button tvOff = new Button("TV Off");
+        layout.addComponent(tvOn);
+        layout.addComponent(tvOff);
+        panel.setContent(layout);
+        return panel;
+    }
+
+    private Component switches(){
+        Layout layout = new HorizontalLayout();
+        Panel panel = new Panel("Switches");
+        Button sw01On = new Button("Switch 01 On", this::SwitchOn);
+        layout.addComponent(sw01On);
+        panel.setContent(layout);
         return panel;
     }
 
@@ -324,6 +352,22 @@ public final class DashboardView extends Panel implements View,
         } else {
             notificationsWindow.close();
         }
+    }
+
+    private void LightsOn(Button.ClickEvent event) {
+        LimitlessLED.lightControl(1, "white");
+    }
+
+    private void LightsOff(Button.ClickEvent event) {
+        LimitlessLED.lightControl(1, "off");
+    }
+
+    private void LightsGreen(Button.ClickEvent event) {
+        LimitlessLED.lightControl(1, "green");
+    }
+
+    private void SwitchOn(Button.ClickEvent event) { //TODO finish Switch method;
+        //WeMo.Switch();
     }
 
     @Override
