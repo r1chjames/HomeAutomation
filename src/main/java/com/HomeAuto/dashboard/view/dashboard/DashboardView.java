@@ -1,19 +1,19 @@
 package com.HomeAuto.dashboard.view.dashboard;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 
 import com.google.common.eventbus.Subscribe;
 import com.HomeAuto.dashboard.DashboardUI;
 import com.HomeAuto.dashboard.component.TopTenMoviesTable;
-import com.HomeAuto.dashboard.data.dummy.DummyDataGenerator;
 import com.HomeAuto.dashboard.domain.DashboardNotification;
 import com.HomeAuto.dashboard.event.DashboardEvent.CloseOpenWindowsEvent;
 import com.HomeAuto.dashboard.event.DashboardEvent.NotificationsCountUpdatedEvent;
 import com.HomeAuto.dashboard.event.DashboardEventBus;
 import com.HomeAuto.dashboard.view.dashboard.DashboardEdit.DashboardEditListener;
-import com.HomeAuto.dashboard.backend.LimitlessLED;
-import com.HomeAuto.dashboard.backend.WeMo;
+import com.HomeAuto.dashboard.backend.drivers.LimitlessLED;
+import com.HomeAuto.dashboard.backend.drivers.WeMo;
 import com.vaadin.event.LayoutEvents.LayoutClickEvent;
 import com.vaadin.event.LayoutEvents.LayoutClickListener;
 import com.vaadin.event.ShortcutAction.KeyCode;
@@ -367,7 +367,7 @@ public final class DashboardView extends Panel implements View,
     }
 
     private void SwitchOn(Button.ClickEvent event) { //TODO finish Switch method;
-        //WeMo.Switch();
+        WeMo.SwitchControl("http://192.168.0.26:49153/upnp/control/basicevent1");
     }
 
     @Override
