@@ -1,55 +1,101 @@
 package com.HomeAuto.dashboard.backend.drivers;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.*;
-
 /**
  * Created by Rich on 23/09/2015.
  */
+
+import java.io.IOException;
+import java.net.*;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpException;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+
 public class WeMo {
 
-    public static void SwitchControl(String wemoAddr) {
-        headers.'SOAPACTION' = "\"urn:Belkin:service:basicevent:1#SetBinaryState\""
-        headers.'Content-Type' = "text/xml; charset=\"utf-8\""
-        headers.'Accept' = ""
-        String requestXml = "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">\n" +
-                "<s:Body>\n" +
-                "<u:SetBinaryState  xmlns:u=\"urn:Belkin:service:basicevent:1\">\n" +
-                "<BinaryState>1</BinaryState>\n" +
-                "</u:SetBinaryState>\n" +
-                "</s:Body>\n</s:Envelope>";
-        try {
-            URL url = new URL(wemoAddr);
-            URLConnection con = url.openConnection();
-            // specify that we will send output and accept input
-            con.setDoInput(true);
-            con.setDoOutput(true);
-            con.setConnectTimeout(20000);  // long timeout, but not infinite
-            con.setReadTimeout(20000);
-            con.setUseCaches(false);
-            con.setDefaultUseCaches(false);
-            // tell the web server what we are sending
-            con.setRequestProperty("Content-Type", "text/xml");
-            OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-            writer.write(requestXml);
-            writer.flush();
-            writer.close();
-            // reading the response
-            InputStreamReader reader = new InputStreamReader(con.getInputStream());
-            StringBuilder buf = new StringBuilder();
-            char[] cbuf = new char[2048];
-            int num;
-            while (-1 != (num = reader.read(cbuf))) {
-                buf.append(cbuf, 0, num);
+    public static String GetStatus(String wemoAddr) {
+        String status = null;
+        String strresponse = null;
+        try{
+            String body = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+                    "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">\n" +
+                    "  <s:Body>\n" +
+                    "    <u:GetBinaryState xmlns:u=\"urn:Belkin:service:basicevent:1\"></u:GetBinaryState>\n" +
+                    "  </s:Body>\n" +
+                    "</s:Envelope>";
+            String soapaction = "\"urn:Belkin:service:basicevent:1#GetBinaryState\"";
+            HttpPost httppost = new HttpPost(wemoAddr);
+
+            // Request parameters and other properties.
+            StringEntity stringentity = new StringEntity(body);
+            httppost.setEntity(stringentity);
+            httppost.addHeader("Accept", "");
+            httppost.addHeader("Content-Type","text/xml; charset=\"UTF-8\"");
+            httppost.addHeader("SOAPAction", soapaction);
+            //Execute and get the response.
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpResponse response = httpclient.execute(httppost);
+            HttpEntity entity = response.getEntity();
+
+            if (entity != null) {
+            strresponse = EntityUtils.toString(entity);
             }
-            String result = buf.toString();
-            System.err.println("\nResponse from server after POST:\n" + result);
-        } catch (Throwable t) {
-            t.printStackTrace(System.out);
+            if (strresponse.contains("<BinaryState>1</BinaryState>")){
+                status = "On";
+            }
+            else if (strresponse.contains("<BinaryState>0</BinaryState>")){
+                status = "Off";
+            }
+        }
+        catch (IOException | URISyntaxException | HttpException e){ System.out.println(e); }
+
+        return status;
+    }
+
+public static void SetStatus(String wemoAddr) {
+    Integer state = null;
+    String strresponse = null;
+    GetStatus(wemoAddr);
+    if (GetStatus(wemoAddr) == "On"){
+        state = 0;
+    }
+    else if (GetStatus(wemoAddr) == "Off"){
+        state = 1;
+    }
+
+    try{
+        String body = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+                "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">\n" +
+                "  <s:Body>\n" +
+                "    <u:SetBinaryState xmlns:u=\"urn:Belkin:service:basicevent:1\">\n" +
+                "      <BinaryState>" + state + "</BinaryState>\n" +
+                "    </u:SetBinaryState>\n" +
+                "  </s:Body>\n" +
+                "</s:Envelope>";
+        String soapaction = "\"urn:Belkin:service:basicevent:1#SetBinaryState\"";
+        HttpPost httppost = new HttpPost(wemoAddr);
+
+        // Request parameters and other properties.
+        StringEntity stringentity = new StringEntity(body);
+        httppost.setEntity(stringentity);
+        httppost.addHeader("Accept", "");
+        httppost.addHeader("Content-Type","text/xml; charset=\"UTF-8\"");
+        httppost.addHeader("SOAPAction", soapaction);
+        //Execute and get the response.
+        HttpClient httpclient = new DefaultHttpClient();
+        HttpResponse response = httpclient.execute(httppost);
+        HttpEntity entity = response.getEntity();
+
+        if (entity != null) {
+            strresponse = EntityUtils.toString(entity);
         }
     }
+    catch (IOException | URISyntaxException | HttpException e){ System.out.println(e); }
+}
 
     public static void Discover(String wemoAddr){
         try {

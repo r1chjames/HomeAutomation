@@ -174,9 +174,14 @@
             <artifactId>guava</artifactId>
             <version>18.0</version>
         </dependency>
-		<!-- The huge set of awesome Java libraries are available as such for Vaadin 
-			developers, you should take the advantage of those. In this app we just use 
-			the commons-beanutils to help implementing the fake backend. -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.0-alpha4</version>
+        </dependency>
+        <!-- The huge set of awesome Java libraries are available as such for Vaadin
+            developers, you should take the advantage of those. In this app we just use
+            the commons-beanutils to help implementing the fake backend. -->
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>

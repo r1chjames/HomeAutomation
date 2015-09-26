@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 import com.google.common.eventbus.Subscribe;
 import com.HomeAuto.dashboard.DashboardUI;
-import com.HomeAuto.dashboard.component.TopTenMoviesTable;
+//import com.HomeAuto.dashboard.component.TopTenMoviesTable;
 import com.HomeAuto.dashboard.domain.DashboardNotification;
 import com.HomeAuto.dashboard.event.DashboardEvent.CloseOpenWindowsEvent;
 import com.HomeAuto.dashboard.event.DashboardEvent.NotificationsCountUpdatedEvent;
@@ -152,9 +152,9 @@ public final class DashboardView extends Panel implements View,
         dashboardPanels.addStyleName("dashboard-panels");
         Responsive.makeResponsive(dashboardPanels);
 
-       //dashboardPanels.addComponent(buildTopGrossingMovies());
-        dashboardPanels.addComponent(buildNotes());
-        dashboardPanels.addComponent(buildTop10TitlesByRevenue());
+//        dashboardPanels.addComponent(buildTopGrossingMovies());
+//        dashboardPanels.addComponent(buildNotes());
+//        dashboardPanels.addComponent(buildTop10TitlesByRevenue());
         dashboardPanels.addComponent(limitlessLED());
         dashboardPanels.addComponent(electronics());
         dashboardPanels.addComponent(switches());
@@ -169,22 +169,23 @@ public final class DashboardView extends Panel implements View,
 //        return createContentWrapper(topGrossingMoviesChart);
 //    }
 
-    private Component buildNotes() {
-        TextArea notes = new TextArea("Notes");
-        notes.setValue("Remember to:\n· Zoom in and out in the Sales view\n· Filter the transactions and drag a set of them to the Reports tab\n· Create a new report\n· Change the schedule of the movie theater");
-        notes.setSizeFull();
-        notes.addStyleName(ValoTheme.TEXTAREA_BORDERLESS);
-        Component panel = createContentWrapper(notes);
-        panel.addStyleName("notes");
-        return panel;
-    }
+//    private Component buildNotes() {
+//        TextArea notes = new TextArea("Notes");
+//        notes.setValue("Remember to:\n· Zoom in and out in the Sales view\n· Filter the transactions and drag a set of them to the Reports tab\n· Create a new report\n· Change the schedule of the movie theater");
+//        notes.setSizeFull();
+//        notes.addStyleName(ValoTheme.TEXTAREA_BORDERLESS);
+//        Component panel = createContentWrapper(notes);
+//        panel.addStyleName("notes");
+//        return panel;
+//    }
 
     private Component limitlessLED(){
-        Layout layout = new HorizontalLayout();
         Panel panel = new Panel("LimitlessLED");
+        Layout layout = new HorizontalLayout();
         Button lightsOn = new Button("Lights On", this::LightsOn);
         Button lightsOff = new Button("Lights Off", this::LightsOff);
         Button lightsGreen = new Button("Lights Green", this::LightsGreen);
+        //lightsOn.addStyleName(Dashboard.buttonHalo);
         layout.addComponent(lightsOn);
         layout.addComponent(lightsOff);
         layout.addComponent(lightsGreen);
@@ -194,30 +195,32 @@ public final class DashboardView extends Panel implements View,
     }
 
     private Component electronics(){
-        Layout layout = new HorizontalLayout();
         Panel panel = new Panel("Electronics");
+        Layout layout = new HorizontalLayout();
         Button tvOn = new Button("TV On");
         Button tvOff = new Button("TV Off");
         layout.addComponent(tvOn);
         layout.addComponent(tvOff);
         panel.setContent(layout);
-        return panel;
+        Component compPanel = createContentWrapper(panel);
+        return compPanel;
     }
 
     private Component switches(){
-        Layout layout = new HorizontalLayout();
         Panel panel = new Panel("Switches");
-        Button sw01On = new Button("Switch 01 On", this::SwitchOn);
+        Layout layout = new HorizontalLayout();
+        Button sw01On = new Button("WeMo Switch 1", this::Switch);
         layout.addComponent(sw01On);
         panel.setContent(layout);
-        return panel;
+        Component compPanel = createContentWrapper(panel);
+        return compPanel;
     }
 
-    private Component buildTop10TitlesByRevenue() {
-        Component contentWrapper = createContentWrapper(new TopTenMoviesTable());
-        contentWrapper.addStyleName("top10-revenue");
-        return contentWrapper;
-    }
+//    private Component buildTop10TitlesByRevenue() {
+//        Component contentWrapper = createContentWrapper(new TopTenMoviesTable());
+//        contentWrapper.addStyleName("top10-revenue");
+//        return contentWrapper;
+//    }
 
 //    private Component buildPopularMovies() {
 //        return createContentWrapper(new TopSixTheatersChart());
@@ -263,14 +266,14 @@ public final class DashboardView extends Panel implements View,
         root.addItem("Configure", new Command() {
             @Override
             public void menuSelected(final MenuItem selectedItem) {
-                Notification.show("Not implemented in this demo");
+                Notification.show("Not implemented yet");
             }
         });
         root.addSeparator();
         root.addItem("Close", new Command() {
             @Override
             public void menuSelected(final MenuItem selectedItem) {
-                Notification.show("Not implemented in this demo");
+                Notification.show("Not implemented yet");
             }
         });
 
@@ -324,7 +327,7 @@ public final class DashboardView extends Panel implements View,
                 new ClickListener() {
                     @Override
                     public void buttonClick(final ClickEvent event) {
-                        Notification.show("Not implemented in this demo");
+                        Notification.show("Not implemented yet");
                     }
                 });
         showAll.addStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
@@ -366,8 +369,9 @@ public final class DashboardView extends Panel implements View,
         LimitlessLED.lightControl(1, "green");
     }
 
-    private void SwitchOn(Button.ClickEvent event) { //TODO finish Switch method;
-        WeMo.SwitchControl("http://192.168.0.26:49153/upnp/control/basicevent1");
+    private void Switch(Button.ClickEvent event) { //TODO finish Switch method;
+        Notification.show("Actuating Switch 1");
+        WeMo.SetStatus("http://192.168.0.26:49153/upnp/control/basicevent1");
     }
 
     @Override

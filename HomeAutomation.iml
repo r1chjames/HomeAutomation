@@ -54,12 +54,11 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.jetty:jetty-io:8.1.12.v20130726" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.jetty:jetty-util:8.1.12.v20130726" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jdesktop:swing-worker:1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-codec:commons-codec:1.8" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.8" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.james:apache-mime4j:0.6" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.httpcomponents:httpclient:4.3.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.httpcomponents:httpcore:4.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.httpcomponents:httpmime:4.3.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.sourceforge.nekohtml:nekohtml:1.9.19" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: xalan:serializer:2.7.1" level="project" />
@@ -117,6 +116,7 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-jdk14:1.6.4" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.4" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.0-alpha4" level="project" />
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.2" level="project" />
   </component>
 </module>

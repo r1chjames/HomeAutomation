@@ -30,7 +30,7 @@ public class LimitlessLED {
             }
         }
         if (command.equals("white")){
-                lightControl(group,"on");
+            lightControl(group,"on");
             UDPTransmit.sendData[0] = (byte)0xC2;
         }
         if (command.equals("green")){
