@@ -2,7 +2,7 @@ package com.HomeAuto.dashboard.event;
 
 import java.util.Collection;
 
-import com.HomeAuto.dashboard.domain.Transaction;
+//import com.HomeAuto.dashboard.domain.Transaction;
 import com.HomeAuto.dashboard.view.DashboardViewType;
 
 /*
@@ -52,17 +52,17 @@ public abstract class DashboardEvent {
 
     }
 
-    public static final class TransactionReportEvent {
-        private final Collection<Transaction> transactions;
-
-        public TransactionReportEvent(final Collection<Transaction> transactions) {
-            this.transactions = transactions;
-        }
-
-        public Collection<Transaction> getTransactions() {
-            return transactions;
-        }
-    }
+//    public static final class TransactionReportEvent {
+//        private final Collection<Transaction> transactions;
+//
+//        public TransactionReportEvent(final Collection<Transaction> transactions) {
+//            this.transactions = transactions;
+//        }
+//
+//        public Collection<Transaction> getTransactions() {
+//            return transactions;
+//        }
+//    }
 
     public static final class PostViewChangeEvent {
         private final DashboardViewType view;

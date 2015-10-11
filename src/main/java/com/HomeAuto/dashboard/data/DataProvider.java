@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.Date;
 
 import com.HomeAuto.dashboard.domain.DashboardNotification;
-import com.HomeAuto.dashboard.domain.Movie;
-import com.HomeAuto.dashboard.domain.MovieRevenue;
-import com.HomeAuto.dashboard.domain.Transaction;
+//import com.HomeAuto.dashboard.domain.Movie;
+//import com.HomeAuto.dashboard.domain.MovieRevenue;
+//import com.HomeAuto.dashboard.domain.Transaction;
 import com.HomeAuto.dashboard.domain.User;
 
 /**
@@ -18,19 +18,19 @@ public interface DataProvider {
      *            Number of transactions to fetch.
      * @return A Collection of most recent transactions.
      */
-    Collection<Transaction> getRecentTransactions(int count);
+//    Collection<Transaction> getRecentTransactions(int count);
 
     /**
      * @param id
      *            Movie identifier.
      * @return A Collection of daily revenues for the movie.
      */
-    Collection<MovieRevenue> getDailyRevenuesByMovie(long id);
+//    Collection<MovieRevenue> getDailyRevenuesByMovie(long id);
 
     /**
      * @return Total revenues for each listed movie.
      */
-    Collection<MovieRevenue> getTotalMovieRevenues();
+//    Collection<MovieRevenue> getTotalMovieRevenues();
 
     /**
      * @param userName
@@ -57,14 +57,14 @@ public interface DataProvider {
     /**
      * @return A Collection of movies.
      */
-    Collection<Movie> getMovies();
+//    Collection<Movie> getMovies();
 
     /**
      * @param movieId
      *            Movie's identifier
      * @return A Movie instance for the given id.
      */
-    Movie getMovie(long movieId);
+//    Movie getMovie(long movieId);
 
     /**
      * @param startDate
@@ -72,5 +72,5 @@ public interface DataProvider {
      * @return A Collection of Transactions between the given start and end
      *         dates.
      */
-    Collection<Transaction> getTransactionsBetween(Date startDate, Date endDate);
+//    Collection<Transaction> getTransactionsBetween(Date startDate, Date endDate);
 }

@@ -5,13 +5,13 @@ import java.util.Collection;
 import com.google.common.eventbus.Subscribe;
 import com.HomeAuto.dashboard.DashboardUI;
 import com.HomeAuto.dashboard.component.ProfilePreferencesWindow;
-import com.HomeAuto.dashboard.domain.Transaction;
+//import com.HomeAuto.dashboard.domain.Transaction;
 import com.HomeAuto.dashboard.domain.User;
 import com.HomeAuto.dashboard.event.DashboardEvent.NotificationsCountUpdatedEvent;
 import com.HomeAuto.dashboard.event.DashboardEvent.PostViewChangeEvent;
 import com.HomeAuto.dashboard.event.DashboardEvent.ProfileUpdatedEvent;
 import com.HomeAuto.dashboard.event.DashboardEvent.ReportsCountUpdatedEvent;
-import com.HomeAuto.dashboard.event.DashboardEvent.TransactionReportEvent;
+//import com.HomeAuto.dashboard.event.DashboardEvent.TransactionReportEvent;
 import com.HomeAuto.dashboard.event.DashboardEvent.UserLoggedOutEvent;
 import com.HomeAuto.dashboard.event.DashboardEventBus;
 import com.vaadin.event.dd.DragAndDropEvent;
@@ -153,34 +153,34 @@ public final class DashboardMenu extends CustomComponent {
         for (final DashboardViewType view : DashboardViewType.values()) {
             Component menuItemComponent = new ValoMenuItemButton(view);
 
-            if (view == DashboardViewType.REPORTS) {
-                // Add drop target to reports button
-                DragAndDropWrapper reports = new DragAndDropWrapper(
-                        menuItemComponent);
-                reports.setSizeUndefined();
-                reports.setDragStartMode(DragStartMode.NONE);
-                reports.setDropHandler(new DropHandler() {
-
-                    @Override
-                    public void drop(final DragAndDropEvent event) {
-                        UI.getCurrent()
-                                .getNavigator()
-                                .navigateTo(
-                                        DashboardViewType.REPORTS.getViewName());
-                        Table table = (Table) event.getTransferable()
-                                .getSourceComponent();
-                        DashboardEventBus.post(new TransactionReportEvent(
-                                (Collection<Transaction>) table.getValue()));
-                    }
-
-                    @Override
-                    public AcceptCriterion getAcceptCriterion() {
-                        return AcceptItem.ALL;
-                    }
-
-                });
-                menuItemComponent = reports;
-            }
+//            if (view == DashboardViewType.REPORTS) {
+//                // Add drop target to reports button
+//                DragAndDropWrapper reports = new DragAndDropWrapper(
+//                        menuItemComponent);
+//                reports.setSizeUndefined();
+//                reports.setDragStartMode(DragStartMode.NONE);
+//                reports.setDropHandler(new DropHandler() {
+//
+//                    @Override
+//                    public void drop(final DragAndDropEvent event) {
+//                        UI.getCurrent()
+//                                .getNavigator()
+//                                .navigateTo(
+//                                        DashboardViewType.REPORTS.getViewName());
+//                        Table table = (Table) event.getTransferable()
+//                                .getSourceComponent();
+//                        DashboardEventBus.post(new TransactionReportEvent(
+//                                (Collection<Transaction>) table.getValue()));
+//                    }
+//
+//                    @Override
+//                    public AcceptCriterion getAcceptCriterion() {
+//                        return AcceptItem.ALL;
+//                    }
+//
+//                });
+//                menuItemComponent = reports;
+//            }
 
             if (view == DashboardViewType.DASHBOARD) {
                 notificationsBadge = new Label();
@@ -188,12 +188,12 @@ public final class DashboardMenu extends CustomComponent {
                 menuItemComponent = buildBadgeWrapper(menuItemComponent,
                         notificationsBadge);
             }
-            if (view == DashboardViewType.REPORTS) {
-                reportsBadge = new Label();
-                reportsBadge.setId(REPORTS_BADGE_ID);
-                menuItemComponent = buildBadgeWrapper(menuItemComponent,
-                        reportsBadge);
-            }
+//            if (view == DashboardViewType.REPORTS) {
+//                reportsBadge = new Label();
+//                reportsBadge.setId(REPORTS_BADGE_ID);
+//                menuItemComponent = buildBadgeWrapper(menuItemComponent,
+//                        reportsBadge);
+//            }
 
             menuItemsLayout.addComponent(menuItemComponent);
         }

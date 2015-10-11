@@ -2,19 +2,12 @@ package com.HomeAuto.dashboard.view;
 
 import com.HomeAuto.dashboard.view.dashboard.DashboardView;
 import com.HomeAuto.dashboard.view.reports.ReportsView;
-import com.HomeAuto.dashboard.view.sales.SalesView;
-import com.HomeAuto.dashboard.view.schedule.ScheduleView;
-import com.HomeAuto.dashboard.view.transactions.TransactionsView;
 import com.vaadin.navigator.View;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.Resource;
 
 public enum DashboardViewType {
-    DASHBOARD("dashboard", DashboardView.class, FontAwesome.HOME, true), SALES(
-            "sales", SalesView.class, FontAwesome.BAR_CHART_O, false), TRANSACTIONS(
-            "transactions", TransactionsView.class, FontAwesome.TABLE, false), REPORTS(
-            "reports", ReportsView.class, FontAwesome.FILE_TEXT_O, true), SCHEDULE(
-            "schedule", ScheduleView.class, FontAwesome.CALENDAR_O, false);
+    DASHBOARD("dashboard", DashboardView.class, FontAwesome.HOME, true);
 
     private final String viewName;
     private final Class<? extends View> viewClass;

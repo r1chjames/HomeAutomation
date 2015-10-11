@@ -14,6 +14,7 @@ import com.HomeAuto.dashboard.event.DashboardEventBus;
 import com.HomeAuto.dashboard.view.dashboard.DashboardEdit.DashboardEditListener;
 import com.HomeAuto.dashboard.backend.drivers.LimitlessLED;
 import com.HomeAuto.dashboard.backend.drivers.WeMo;
+import com.HomeAuto.dashboard.backend.drivers.SonyBravia;
 import com.vaadin.event.LayoutEvents.LayoutClickEvent;
 import com.vaadin.event.LayoutEvents.LayoutClickListener;
 import com.vaadin.event.ShortcutAction.KeyCode;
@@ -197,8 +198,8 @@ public final class DashboardView extends Panel implements View,
     private Component electronics(){
         Panel panel = new Panel("Electronics");
         Layout layout = new HorizontalLayout();
-        Button tvOn = new Button("TV On");
-        Button tvOff = new Button("TV Off");
+        Button tvOn = new Button("TV On", this::TV);
+        Button tvOff = new Button("TV Off", this::TV);
         layout.addComponent(tvOn);
         layout.addComponent(tvOff);
         panel.setContent(layout);
@@ -369,9 +370,15 @@ public final class DashboardView extends Panel implements View,
         LimitlessLED.lightControl(1, "green");
     }
 
-    private void Switch(Button.ClickEvent event) { //TODO finish Switch method;
+    private void Switch(Button.ClickEvent event) {
         Notification.show("Actuating Switch 1");
         WeMo.SetStatus("http://192.168.0.26:49153/upnp/control/basicevent1");
+    }
+
+    private void TV(Button.ClickEvent event) { //TODO finish TV method;
+        String command = "Off";
+        Notification.show("Turning Sony BRAVIA TV" + command);
+        SonyBravia.SetStatus("http://tv/sony/IRCC?",command);
     }
 
     @Override
