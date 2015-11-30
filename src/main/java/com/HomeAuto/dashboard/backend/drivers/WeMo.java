@@ -56,8 +56,9 @@ public class WeMo {
         return status;
     }
 
-public static void SetStatus(String wemoAddr) {
+public static void ToggleStatus(String ipAddr) {
     Integer state = null;
+    String wemoAddr = "http://" + ipAddr + ":49153/upnp/control/basicevent1";
     String strresponse = null;
     GetStatus(wemoAddr);
     if (GetStatus(wemoAddr) == "On"){
@@ -89,6 +90,8 @@ public static void SetStatus(String wemoAddr) {
         HttpClient httpclient = new DefaultHttpClient();
         HttpResponse response = httpclient.execute(httppost);
         HttpEntity entity = response.getEntity();
+
+
 
         if (entity != null) {
             strresponse = EntityUtils.toString(entity);

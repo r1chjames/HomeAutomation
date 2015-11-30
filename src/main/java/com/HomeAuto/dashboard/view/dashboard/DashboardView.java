@@ -14,6 +14,7 @@ import com.HomeAuto.dashboard.event.DashboardEventBus;
 import com.HomeAuto.dashboard.view.dashboard.DashboardEdit.DashboardEditListener;
 import com.HomeAuto.dashboard.backend.drivers.LimitlessLED;
 import com.HomeAuto.dashboard.backend.drivers.WeMo;
+import com.HomeAuto.dashboard.backend.drivers.Speech;
 import com.HomeAuto.dashboard.backend.drivers.SonyBravia;
 import com.vaadin.event.LayoutEvents.LayoutClickEvent;
 import com.vaadin.event.LayoutEvents.LayoutClickListener;
@@ -28,6 +29,7 @@ import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.MenuBar.Command;
 import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.themes.ValoTheme;
+import jdk.jfr.events.ExceptionThrownEvent;
 
 @SuppressWarnings("serial")
 public final class DashboardView extends Panel implements View,
@@ -372,13 +374,19 @@ public final class DashboardView extends Panel implements View,
 
     private void Switch(Button.ClickEvent event) {
         Notification.show("Actuating Switch 1");
-        WeMo.SetStatus("http://192.168.0.26:49153/upnp/control/basicevent1");
+        WeMo.ToggleStatus("192.168.0.26");
     }
 
     private void TV(Button.ClickEvent event) { //TODO finish TV method;
-        String command = "Off";
-        Notification.show("Turning Sony BRAVIA TV" + command);
-        SonyBravia.SetStatus("http://tv/sony/IRCC?",command);
+        try{
+            Speech.Listen();
+        }
+        catch (Exception e){
+            System.out.println("Speech Error: " + e);
+        }
+        //String command = "Off";
+        //Notification.show("Turning Sony BRAVIA TV" + command);
+        //SonyBravia.SetStatus("http://tv/sony/IRCC?",command);
     }
 
     @Override
