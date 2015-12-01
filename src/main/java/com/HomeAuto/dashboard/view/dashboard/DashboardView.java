@@ -33,6 +33,7 @@ public final class DashboardView extends Panel implements View,
         DashboardEditListener {
 //TODO Need to change to lambda
 //TODO Need to figure out layout
+//TODO Add a database
     public static final String EDIT_ID = "dashboard-edit";
     public static final String TITLE_ID = "dashboard-title";
 
