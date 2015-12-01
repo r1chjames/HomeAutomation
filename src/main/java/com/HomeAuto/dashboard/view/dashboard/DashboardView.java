@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 
+import com.HomeAuto.dashboard.backend.drivers.*;
 import com.google.common.eventbus.Subscribe;
 import com.HomeAuto.dashboard.DashboardUI;
 //import com.HomeAuto.dashboard.component.TopTenMoviesTable;
@@ -12,10 +13,6 @@ import com.HomeAuto.dashboard.event.DashboardEvent.CloseOpenWindowsEvent;
 import com.HomeAuto.dashboard.event.DashboardEvent.NotificationsCountUpdatedEvent;
 import com.HomeAuto.dashboard.event.DashboardEventBus;
 import com.HomeAuto.dashboard.view.dashboard.DashboardEdit.DashboardEditListener;
-import com.HomeAuto.dashboard.backend.drivers.LimitlessLED;
-import com.HomeAuto.dashboard.backend.drivers.WeMo;
-import com.HomeAuto.dashboard.backend.drivers.Speech;
-import com.HomeAuto.dashboard.backend.drivers.SonyBravia;
 import com.vaadin.event.LayoutEvents.LayoutClickEvent;
 import com.vaadin.event.LayoutEvents.LayoutClickListener;
 import com.vaadin.event.ShortcutAction.KeyCode;
@@ -34,7 +31,8 @@ import jdk.jfr.events.ExceptionThrownEvent;
 @SuppressWarnings("serial")
 public final class DashboardView extends Panel implements View,
         DashboardEditListener {
-
+//TODO Need to change to lambda
+//TODO Need to figure out layout
     public static final String EDIT_ID = "dashboard-edit";
     public static final String TITLE_ID = "dashboard-title";
 
@@ -55,10 +53,7 @@ public final class DashboardView extends Panel implements View,
         root.addStyleName("dashboard-view");
         setContent(root);
         Responsive.makeResponsive(root);
-
         root.addComponent(buildHeader());
-
-        //root.addComponent(buildSparklines());
 
         Component content = buildContent();
         root.addComponent(content);
@@ -74,31 +69,6 @@ public final class DashboardView extends Panel implements View,
         });
     }
 
-//    private Component buildSparklines() {
-//        CssLayout sparks = new CssLayout();
-//        sparks.addStyleName("sparks");
-//        sparks.setWidth("100%");
-//        Responsive.makeResponsive(sparks);
-//
-//        SparklineChart s = new SparklineChart("Traffic", "K", "",
-//                DummyDataGenerator.chartColors[0], 22, 20, 80);
-//        sparks.addComponent(s);
-//
-//        s = new SparklineChart("Revenue / Day", "M", "$",
-//                DummyDataGenerator.chartColors[2], 8, 89, 150);
-//        sparks.addComponent(s);
-//
-//        s = new SparklineChart("Checkout Time", "s", "",
-//                DummyDataGenerator.chartColors[3], 10, 30, 120);
-//        sparks.addComponent(s);
-//
-//        s = new SparklineChart("Theater Fill Rate", "%", "",
-//                DummyDataGenerator.chartColors[5], 50, 34, 100);
-//        sparks.addComponent(s);
-//
-//        return sparks;
-//    }
-
     private Component buildHeader() {
         HorizontalLayout header = new HorizontalLayout();
         header.addStyleName("viewheader");
@@ -111,14 +81,35 @@ public final class DashboardView extends Panel implements View,
         titleLabel.addStyleName(ValoTheme.LABEL_NO_MARGIN);
         header.addComponent(titleLabel);
 
+        Button speech = speechButton();
         notificationsButton = buildNotificationsButton();
         Component edit = buildEditButton();
-        HorizontalLayout tools = new HorizontalLayout(notificationsButton, edit);
+        HorizontalLayout tools = new HorizontalLayout(speech, notificationsButton, edit);
         tools.setSpacing(true);
         tools.addStyleName("toolbar");
         header.addComponent(tools);
 
         return header;
+    }
+//TODO Speech still returns error - could replace with https://stackoverflow.com/questions/26485531/google-speech-api-v2
+    private Button speechButton() {
+        Button result = new Button();
+        result.setId(EDIT_ID);
+        result.setIcon(FontAwesome.MICROPHONE);
+        result.addStyleName("icon-edit");
+        result.addStyleName(ValoTheme.BUTTON_ICON_ONLY);
+        result.setDescription("Speech Recognition");
+        result.addClickListener(new ClickListener() {
+            @Override
+            public void buttonClick(final ClickEvent event) {
+                try {
+                    Speech.Listen();
+                } catch (Exception e) {
+                    System.out.println("Speech Error: " + e);
+                }
+            }
+        });
+        return result;
     }
 
     private NotificationsButton buildNotificationsButton() {
@@ -155,32 +146,12 @@ public final class DashboardView extends Panel implements View,
         dashboardPanels.addStyleName("dashboard-panels");
         Responsive.makeResponsive(dashboardPanels);
 
-//        dashboardPanels.addComponent(buildTopGrossingMovies());
-//        dashboardPanels.addComponent(buildNotes());
-//        dashboardPanels.addComponent(buildTop10TitlesByRevenue());
         dashboardPanels.addComponent(limitlessLED());
         dashboardPanels.addComponent(electronics());
         dashboardPanels.addComponent(switches());
-        //dashboardPanels.addComponent(buildPopularMovies());
 
         return dashboardPanels;
     }
-
-//    private Component buildTopGrossingMovies() {
-//        TopGrossingMoviesChart topGrossingMoviesChart = new TopGrossingMoviesChart();
-//        topGrossingMoviesChart.setSizeFull();
-//        return createContentWrapper(topGrossingMoviesChart);
-//    }
-
-//    private Component buildNotes() {
-//        TextArea notes = new TextArea("Notes");
-//        notes.setValue("Remember to:\n· Zoom in and out in the Sales view\n· Filter the transactions and drag a set of them to the Reports tab\n· Create a new report\n· Change the schedule of the movie theater");
-//        notes.setSizeFull();
-//        notes.addStyleName(ValoTheme.TEXTAREA_BORDERLESS);
-//        Component panel = createContentWrapper(notes);
-//        panel.addStyleName("notes");
-//        return panel;
-//    }
 
     private Component limitlessLED(){
         Panel panel = new Panel("LimitlessLED");
@@ -202,8 +173,10 @@ public final class DashboardView extends Panel implements View,
         Layout layout = new HorizontalLayout();
         Button tvOn = new Button("TV On", this::TV);
         Button tvOff = new Button("TV Off", this::TV);
+        Button devQuery = new Button("Ping", this::DevQuery);
         layout.addComponent(tvOn);
         layout.addComponent(tvOff);
+        layout.addComponent(devQuery);
         panel.setContent(layout);
         Component compPanel = createContentWrapper(panel);
         return compPanel;
@@ -212,22 +185,12 @@ public final class DashboardView extends Panel implements View,
     private Component switches(){
         Panel panel = new Panel("Switches");
         Layout layout = new HorizontalLayout();
-        Button sw01On = new Button("WeMo Switch 1", this::Switch);
-        layout.addComponent(sw01On);
+        Button sw01 = new Button("WeMo Switch 1", this::Switch);
+        layout.addComponent(sw01);
         panel.setContent(layout);
         Component compPanel = createContentWrapper(panel);
         return compPanel;
     }
-
-//    private Component buildTop10TitlesByRevenue() {
-//        Component contentWrapper = createContentWrapper(new TopTenMoviesTable());
-//        contentWrapper.addStyleName("top10-revenue");
-//        return contentWrapper;
-//    }
-
-//    private Component buildPopularMovies() {
-//        return createContentWrapper(new TopSixTheatersChart());
-//    }
 
     private Component createContentWrapper(final Component content) {
         final CssLayout slot = new CssLayout();
@@ -377,16 +340,31 @@ public final class DashboardView extends Panel implements View,
         WeMo.ToggleStatus("192.168.0.26");
     }
 
-    private void TV(Button.ClickEvent event) { //TODO finish TV method;
-        try{
-            Speech.Listen();
+    private void DevQuery(Button.ClickEvent event) {
+        boolean retVal = false;
+        try {
+            retVal = NetworkAwareness.PingDevice("192.168.0.55");
         }
-        catch (Exception e){
-            System.out.println("Speech Error: " + e);
+        catch (IOException e) {
+            System.out.println(e);
         }
-        //String command = "Off";
-        //Notification.show("Turning Sony BRAVIA TV" + command);
-        //SonyBravia.SetStatus("http://tv/sony/IRCC?",command);
+        if (retVal == false) {
+            Notification.show("Device not available");
+        }
+        else {
+            Notification.show("Device available");
+        }
+    }
+
+    private void TV(Button.ClickEvent event) {
+        try {
+            String command = "Off";
+            Notification.show("Turning Sony BRAVIA TV" + command);
+            SonyBravia.SetStatus("http://tv/sony/IRCC?",command);
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
     }
 
     @Override

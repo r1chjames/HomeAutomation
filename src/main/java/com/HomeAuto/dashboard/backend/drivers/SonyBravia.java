@@ -57,7 +57,7 @@ public class SonyBravia {
         return status;
     }
 
-public static void SetStatus(String addr, String command) { //TODO This doesn't work.
+public static void SetStatus(String addr, String command) throws IOException { //TODO This doesn't work.
     //Check https://github.com/KHerron/SonyAPILib
     //http://forum.xda-developers.com/showthread.php?t=2091564&page=3
     //http://mendelonline.be/sony/sony.txt
