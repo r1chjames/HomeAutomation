@@ -7,7 +7,6 @@ import java.util.Iterator;
 import com.HomeAuto.dashboard.backend.drivers.*;
 import com.google.common.eventbus.Subscribe;
 import com.HomeAuto.dashboard.DashboardUI;
-//import com.HomeAuto.dashboard.component.TopTenMoviesTable;
 import com.HomeAuto.dashboard.domain.DashboardNotification;
 import com.HomeAuto.dashboard.event.DashboardEvent.CloseOpenWindowsEvent;
 import com.HomeAuto.dashboard.event.DashboardEvent.NotificationsCountUpdatedEvent;
@@ -92,7 +91,7 @@ public final class DashboardView extends Panel implements View,
 
         return header;
     }
-//TODO Speech still returns error - could replace with https://stackoverflow.com/questions/26485531/google-speech-api-v2
+
     private Button speechButton() {
         Button result = new Button();
         result.setId(EDIT_ID);

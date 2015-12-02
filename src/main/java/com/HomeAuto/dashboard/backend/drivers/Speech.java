@@ -1,82 +1,66 @@
 package com.HomeAuto.dashboard.backend.drivers;
 
-import edu.cmu.sphinx.frontend.util.Microphone;
-import edu.cmu.sphinx.recognizer.Recognizer;
-import edu.cmu.sphinx.result.Result;
-import edu.cmu.sphinx.util.props.ConfigurationManager;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-//import models.Tts;
+import com.HomeAuto.dashboard.backend.drivers.speech.microphone.Microphone;
+import com.HomeAuto.dashboard.backend.drivers.speech.recognizer.Recognizer;
+import com.HomeAuto.dashboard.backend.drivers.speech.recognizer.GoogleResponse;
+import net.sourceforge.javaflacencoder.FLACFileWriter;
+
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioSystem;
+import java.io.File;
 
 public class Speech {
 
-    public static void Listen() throws Exception {
-        ConfigurationManager cm;
+    public static Integer Listen() throws Exception{
+        Integer retVal = 0;
 
-//            if (args.length > 0) {
-//                cm = new ConfigurationManager(args[0]);
-//            } else {
-        ///tmp/helloworld.config.xml
-        cm = new ConfigurationManager(Speech.class.getResource("speech.config.xml"));
+//        AudioFileFormat.Type[] typeArray = AudioSystem.getAudioFileTypes();
+//        for(AudioFileFormat.Type type : typeArray) {
+//            System.out.println("type: " + type.toString());
+//        }
 
-//            }
-        Recognizer recognizer = (Recognizer) cm.lookup("recognizer");
-        recognizer.allocate();
+        Microphone mic = new Microphone(FLACFileWriter.FLAC);
 
-        Microphone microphone = (Microphone) cm.lookup("microphone");
-        if (!microphone.startRecording()) {
-            System.out.println("Cannot start microphone.");
-            recognizer.deallocate();
-            System.exit(1);
+        File file = new File("micrec.flac");
+        mic.open();
+        try {
+            mic.captureAudioToFile (file);
+        } catch (Exception ex) {
+            //Microphone not available or some other error.
+            System.out.println ("ERROR: Microphone is not available.");
+            ex.printStackTrace ();
         }
+        try {
+            System.out.println ("Recording...");
+            Thread.sleep (5000);	//In our case, we'll just wait 5 seconds.
+            mic.close ();
+        } catch (InterruptedException ex) {
+            ex.printStackTrace ();
+        }
+        mic.close();
+        System.out.println ("Recording stopped.");
 
-        System.out.println("Say: (Hello | call) ( Naam | Baam | Caam | Some )");
-
-        while (true) {
-            System.out.println("Start speaking. Press Ctrl-C to quit.\n");
-
-            Result result = recognizer.recognize();
-
-            if (result != null) {
-                String resultText = result.getBestFinalResultNoFiller();
-                System.out.println("You said: " + resultText + '\n');
-
-//                Tts ts = new Tts();
-//                try {
-//                    ts.load();
-//                    ts.say("Did you said: " + resultText);
-//                } catch (IOException ex) {
-//
-//                }
-            } else {
-                System.out.println("I can't hear what you said.\n");
+        Recognizer recognizer = new Recognizer (Recognizer.Languages.ENGLISH_US, "AIzaSyBrRHPtlYyMYa11rBVWnqhsHXSzpCqUZZ8"); // System.getProperty("google-api-key"));
+        try {
+            int maxNumOfResponses = 4;
+            System.out.println("Sample rate is: " + (int) mic.getAudioFormat().getSampleRate());
+            GoogleResponse response = recognizer.getRecognizedDataForFlac (file, maxNumOfResponses, (int) mic.getAudioFormat().getSampleRate ());
+            System.out.println ("Google Response: " + response.getResponse ());
+            System.out.println ("Google is " + Double.parseDouble (response.getConfidence ()) * 100 + "% confident in" + " the reply");
+            System.out.println ("Other Possible responses are: ");
+            for (String s:response.getOtherPossibleResponses ()) {
+                System.out.println ("\t" + s);
             }
+            retVal = 1;
         }
+        catch (Exception ex) {
+            // TODO Handle how to respond if Google cannot be contacted
+            System.out.println ("ERROR: Google cannot be contacted");
+            ex.printStackTrace ();
+            retVal = 2;
+        }
+
+        file.deleteOnExit ();	//Deletes the file as it is no longer necessary.
+        return retVal;
     }
 }
-
-//        Configuration configuration = new Configuration();
-//
-//        configuration
-//                .setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
-//        configuration
-//                .setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
-//        configuration
-//                .setLanguageModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us.lm.bin");
-//
-//        LiveSpeechRecognizer recognizer = new LiveSpeechRecognizer(configuration);
-//        // Start recognition process pruning previously cached data.
-//        recognizer.startRecognition(true);
-//        SpeechResult result = recognizer.getResult();
-//        // Pause recognition process. It can be resumed then with startRecognition(false).
-//        recognizer.stopRecognition();
-//
-//        //recognizer.startRecognition(stream);
-//        //SpeechResult result;
-//        while ((result = recognizer.getResult()) != null) {
-//            System.out.format("Hypothesis: %s\n", result.getHypothesis());
-//        }
-//        //recognizer.stopRecognition();
-    //}
-//}
