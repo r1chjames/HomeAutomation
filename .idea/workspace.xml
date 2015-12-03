@@ -2,44 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a092055-d5e9-4018-b82b-265adb8bd930" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_javaflacencoder_java_flac_encoder_0_3_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20150729.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/Microphone/Microphone.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/Microphone/MicrophoneAnalyzer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/FlacEncoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/GSpeechDuplex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/GSpeechResponseListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/GoogleResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/RecognizerChunked.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/synthesiser/Synthesiser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/synthesiser/SynthesiserV2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/translator/GoogleTranslate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/util/ChunkedOutputStream.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/util/Complex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/util/FFT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/util/StringUtil.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_addon_vaadin_charts_2_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__edu_cmu_sphinx_sphinx4_core_5prealpha_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__edu_cmu_sphinx_sphinx4_data_5prealpha_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_2.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_0_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_3_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/MongoDB.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HomeAutomation.iml" afterPath="$PROJECT_DIR$/HomeAutomation.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/Speech.java" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/Speech.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/dashboard/DashboardView.java" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/dashboard/DashboardView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/HomeAuto/dashboard/DashboardWidgetSet.gwt.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/HomeAuto/dashboard/DashboardWidgetSet.gwt.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/styles.css" afterPath="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java" />
     </list>
     <ignored path="addressbook.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,69 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/Speech.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="69" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.230769">
-              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardWidgetSet.gwt.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/com/HomeAuto/dashboard/DashboardWidgetSet.gwt.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/util/StringUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoogleTranslate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/translator/GoogleTranslate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GSpeechDuplex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/GSpeechDuplex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="176" column="11" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Recognizer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22066738">
-              <caret line="180" column="14" selection-start-line="180" selection-start-column="14" selection-end-line="180" selection-end-column="14" />
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,7 +46,39 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/dashboard/DashboardView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Microphone.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/microphone/Microphone.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MongoDB.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/MongoDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.77603424">
+              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Recognizer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="440" column="16" selection-start-line="440" selection-start-column="16" selection-end-line="440" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -165,57 +109,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/backend/udpTransmit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/backend/es.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/ConfigForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/backend/LimitlessLED.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/backend/UDPTransmit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/DashboardUI.java" />
-        <option value="$PROJECT_DIR$/src/DashboardUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/component/TransactionsListing.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/MainView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/sales/SalesView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/component/MovieDetailsWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/component/ProfilePreferencesWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/component/SparklineChart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/component/TopSixTheatersChart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/component/TopTenMoviesTable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/DashboardNavigator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/event/DashboardEventBus.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ConfigForm.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/LimitlessLED.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/UDPTransmit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/LoginView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/WeMo.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/LimitlessLED.java" />
-        <option value="$PROJECT_DIR$/src/unwanted/SalesView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/transactions/TransactionsView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/schedule/ScheduleView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/event/DashboardEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/DataProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/reports/ReportEditor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/reports/ReportsView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/DashboardViewType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/DashboardMenu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/WeMo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech.config.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/SonyBravia.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/NetworkAwareness.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/GSpeechDuplex.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/RecognizerChunked.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/microphone/MicrophoneAnalyzer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/synthesiser/Synthesiser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/synthesiser/SynthesiserV2.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/HomeAuto/dashboard/DashboardWidgetSet.gwt.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/DashboardUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/Speech.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/dashboard/DashboardView.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/backend/UDPTransmit.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/DashboardUI.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/DashboardUI.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/component/TransactionsListing.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/MainView.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/sales/SalesView.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/component/MovieDetailsWindow.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/component/ProfilePreferencesWindow.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/component/SparklineChart.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/component/TopSixTheatersChart.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/component/TopTenMoviesTable.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/DashboardNavigator.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/event/DashboardEventBus.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/ConfigForm.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/LimitlessLED.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/UDPTransmit.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/LoginView.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/WeMo.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/README.md" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/LimitlessLED.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/unwanted/SalesView.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/transactions/TransactionsView.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/schedule/ScheduleView.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/event/DashboardEvent.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/data/DataProvider.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/reports/ReportEditor.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/reports/ReportsView.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/DashboardViewType.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/DashboardMenu.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/WeMo.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech.config.xml" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/SonyBravia.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/NetworkAwareness.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/GSpeechDuplex.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/RecognizerChunked.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/microphone/MicrophoneAnalyzer.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/synthesiser/Synthesiser.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/synthesiser/SynthesiserV2.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/resources/com/HomeAuto/dashboard/DashboardWidgetSet.gwt.xml" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/DashboardUI.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataGenerator.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataProvider.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/backend/drivers/Speech.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/main/java/com/HomeAuto/dashboard/view/dashboard/DashboardView.java" />
+        <option value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/MongoDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/Speech.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java" />
       </list>
     </option>
   </component>
@@ -233,58 +177,6 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="HomeAutomation" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="HomeAutomation" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Run Configurations" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RunConfigurationsNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="HomeAutomation" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Plugins" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="HomeAutomation" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
-        </PATH_ELEMENT>
-      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
@@ -324,8 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -402,8 +292,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaHomeAutomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaHomeAutomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -411,12 +333,11 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/HomeAuto/dashboard/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="277" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="306" />
@@ -537,7 +458,7 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -682,7 +603,7 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -769,7 +690,7 @@
               <map />
             </option>
             <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
+            <option name="workingDirPath" value="$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation" />
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
@@ -863,7 +784,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449009567190</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Removed Sphinx and implemented Google Speech API v2">
+      <created>1449056997944</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1449056997944</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -876,32 +803,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1672" y="-8" width="1696" height="1066" extended-state="7" />
+    <frame x="1672" y="-8" width="1696" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22703274" sideWeight="0.5020877" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2277952" sideWeight="0.50238097" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12083333" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13530326" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23092999" sideWeight="0.49791232" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2277952" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23824452" sideWeight="0.49761903" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -934,16 +861,22 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/unwanted/DashboardUI.java</url>
+          <url>file://$USER_HOME$/Documents/Documents/Programming/IdeaProjects/JavaHomeAutomation/src/unwanted/DashboardUI.java</url>
           <line>11</line>
           <properties />
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/Speech.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="31" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -952,6 +885,40 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/Speech.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="479" column="1" selection-start-line="479" selection-start-column="1" selection-end-line="479" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/DataProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/MongoDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0-alpha4/httpclient-4.0-alpha4.jar!/org/apache/http/client/methods/HttpPost.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -973,37 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/addons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/img/app-icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/views/reports.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0364466">
-          <caret line="150" column="21" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/edu/cmu/sphinx/sphinx4-core/5prealpha-SNAPSHOT/sphinx4-core-5prealpha-20151122.150846-2.jar!/edu/cmu/sphinx/util/props/SaxLoader.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.77097505">
@@ -1011,257 +947,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/dashboard.scss">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.5.1/vaadin-server-7.5.1.jar!/com/vaadin/server/Page.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33257404">
-          <caret line="11" column="63" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.81497794">
+          <caret line="604" column="13" selection-start-line="604" selection-start-column="13" selection-end-line="604" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/views/dashboardview.scss">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49658313">
-          <caret line="239" column="12" selection-start-line="239" selection-start-column="10" selection-end-line="239" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/views/login.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="26" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/common.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33168316">
-          <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/dashboard/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.018299246">
-          <caret line="2374" column="25" selection-start-line="2374" selection-start-column="21" selection-end-line="2374" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.83625734">
+          <caret line="153" column="20" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/NetworkAwareness.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43918192">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/LimitlessLED.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_66/src.zip!/java/net/AbstractPlainSocketImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036598492">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/GSpeechResponseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12809473">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/FlacEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3110872">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/GoogleResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3724435">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.33238232">
+          <caret line="205" column="0" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/microphone/Microphone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6103337">
-          <caret line="107" column="32" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/microphone/MicrophoneAnalyzer.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.5.1/vaadin-server-7.5.1.jar!/com/vaadin/event/ListenerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32938644">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/util/ChunkedOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3326157">
-          <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.21958457">
+          <caret line="210" column="16" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/util/FFT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.018299246">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/RecognizerChunked.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="23" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43918192">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/dummy/DummyDataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.5.1/vaadin-server-7.5.1.jar!/com/vaadin/server/Page.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81497794">
-          <caret line="604" column="13" selection-start-line="604" selection-start-column="13" selection-end-line="604" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/DashboardUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
-          <folding>
-            <element signature="e#4383#4384#0" expanded="true" />
-            <element signature="e#4452#4453#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/synthesiser/Synthesiser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/view/dashboard/DashboardView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/synthesiser/SynthesiserV2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6694796">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/Speech.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="69" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.230769">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/HomeAuto/dashboard/DashboardWidgetSet.gwt.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/util/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/translator/GoogleTranslate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/GSpeechDuplex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="176" column="11" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="11" />
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/backend/drivers/speech/recognizer/Recognizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22066738">
-          <caret line="180" column="14" selection-start-line="180" selection-start-column="14" selection-end-line="180" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="440" column="16" selection-start-line="440" selection-start-column="16" selection-end-line="440" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HomeAuto/dashboard/data/MongoDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77603424">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

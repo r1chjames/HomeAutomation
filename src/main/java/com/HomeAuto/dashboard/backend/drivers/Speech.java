@@ -40,7 +40,7 @@ public class Speech {
         mic.close();
         System.out.println ("Recording stopped.");
 
-        Recognizer recognizer = new Recognizer (Recognizer.Languages.ENGLISH_US, "AIzaSyBrRHPtlYyMYa11rBVWnqhsHXSzpCqUZZ8"); // System.getProperty("google-api-key"));
+        Recognizer recognizer = new Recognizer (Recognizer.Languages.ENGLISH_UK, "AIzaSyBrRHPtlYyMYa11rBVWnqhsHXSzpCqUZZ8"); // System.getProperty("google-api-key"));
         try {
             int maxNumOfResponses = 4;
             System.out.println("Sample rate is: " + (int) mic.getAudioFormat().getSampleRate());
