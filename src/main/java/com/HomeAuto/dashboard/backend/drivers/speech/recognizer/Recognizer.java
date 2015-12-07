@@ -433,7 +433,7 @@ public class Recognizer {
 
         // URL of Remote Script.
         url = new URL(sb.toString());
-        // System.out.println("Recognizer.rawRequest(): url=" + url);
+         System.out.println("Recognizer.rawRequest(): url=" + url);
 
         // Open New URL connection channel.
         urlConn = url.openConnection();
@@ -443,6 +443,8 @@ public class Recognizer {
 
         // No caching
         urlConn.setUseCaches(false);
+
+        urlConn.setConnectTimeout(1000);
 
         // Specify the header content type.
         urlConn.setRequestProperty("Content-Type", "audio/x-flac; rate=" + sampleRate);
@@ -473,7 +475,7 @@ public class Recognizer {
 
         br.close();
 
-        // System.out.println("Recognizer.rawRequest() -> completeResponse = " + completeResponse);
+        System.out.println("Recognizer.rawRequest() -> completeResponse = " + completeResponse);
         return completeResponse.toArray(new String[completeResponse.size()]);
     }
 }
