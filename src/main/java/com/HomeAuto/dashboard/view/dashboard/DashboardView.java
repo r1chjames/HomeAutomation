@@ -174,9 +174,11 @@ public final class DashboardView extends Panel implements View,
         Button tvOn = new Button("TV On", this::TV);
         Button tvOff = new Button("TV Off", this::TV);
         Button devQuery = new Button("Ping", this::DevQuery);
+        Button motDet = new Button("Detect M", this::DetectMotion);
         layout.addComponent(tvOn);
         layout.addComponent(tvOff);
         layout.addComponent(devQuery);
+        layout.addComponent(motDet);
         panel.setContent(layout);
         Component compPanel = createContentWrapper(panel);
         return compPanel;
@@ -338,6 +340,15 @@ public final class DashboardView extends Panel implements View,
     private void Switch(Button.ClickEvent event) {
         Notification.show("Actuating Switch 1");
         WeMo.ToggleStatus("192.168.0.26");
+    }
+
+    private void DetectMotion(Button.ClickEvent event) {
+        try {
+            MotionDetection.main();
+        }
+        catch (IOException e) {
+            System.out.println("Motion Detection Error: " + e);
+        }
     }
 
     private void DevQuery(Button.ClickEvent event) {

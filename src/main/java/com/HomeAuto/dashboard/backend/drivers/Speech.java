@@ -26,8 +26,8 @@ public class Speech {
         try {
             mic.captureAudioToFile (file);
         } catch (Exception ex) {
-            //Microphone not available or some other error.
-            System.out.println ("ERROR: Microphone is not available.");
+            //microphone not available or some other error.
+            System.out.println ("ERROR: microphone is not available.");
             ex.printStackTrace ();
         }
         try {
